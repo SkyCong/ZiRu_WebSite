@@ -1,2 +1,2 @@
-# ZiRu_WebSite
-GP9_Project——WangCong&amp;ZhangWen 
+### ZiRu_WebSite
+## 开发成员：王聪 张文
