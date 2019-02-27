@@ -11,14 +11,6 @@ new Router({
 
 
 
-
-
-
-
-
-
-
-
 // let promise = new Promise((resolve, rejected) => {
 //     setTimeout(() => {
 //         resolve(123)

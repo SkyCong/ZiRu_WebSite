@@ -1,6 +1,3 @@
-
-
-
 class Store {
     constructor () {
         if ( Store.instance ) return Store.instance
@@ -8,7 +5,6 @@ class Store {
     }
 
     createInstance () {
-
 
         const instance = {
             state: {
@@ -36,7 +32,6 @@ class Store {
             }
         }
         
-
         Store.instance = instance
         return instance
     }

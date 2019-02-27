@@ -1,4 +1,3 @@
-
 const appHeaderView = require('../views/app-header.html')
 const appIndexNowController = require('./app-index-now-controller')
 const appIndexComingController = require('./app-index-coming-controller')
@@ -43,11 +42,7 @@ const render = async () => {
     let positionInfo = await getPositionModel()
     console.log(positionInfo)
     new Store().setState({ city: positionInfo.regeocode.addressComponent.province })
-    
-
-    
-   
-   
+      
 }
 // 切换类型的按钮处理
 function controlTypes () {

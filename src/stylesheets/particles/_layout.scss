@@ -8,37 +8,61 @@ html, body, #app { height: 100%; }
     flex-direction: column; justify-content: space-between; 
 }
 #header { 
-    width: 100%;
-    height: 50px; 
-    background: #E54847; 
-    font-size: 18px; 
-    color: #fff;display: flex;justify-content: center;align-items: center;}
+    display: flex;
+    padding: 0 0.187rem 0 0.373rem;
+    position: relative;
+    height: 1.2rem;
+    line-height:1.2rem;
+    font-size: .373rem;
+    background-color: rgb(250, 250, 250);
+
+    .city{
+        flex: 0 0 1.2rem;
+        width: 1.2rem;
+        margin-right: 0.2rem;
+        img{
+        width: .32rem;
+        }
+    }
+    .search{
+        background-color: rgba(235, 235, 235, 0.476)!important;
+        width: 8.44rem;
+        height: .85rem;
+        line-height: .85rem;
+        margin-top: .16rem;
+        border: 1px solid rgba(221, 221, 221, 0.565);
+        padding-left: .32rem;
+        border-radius: 2px;
+        color: rgba(0,0,0,0.2)
+    }
+}
+
 #main { 
     width: 100%; 
     flex-grow: 1; flex-shrink: 1;
     overflow: auto;
 }
 
-#footer { 
-    width: 100%;height: 48px; background: #fff; 
-}
+// #footer { 
+//     width: 100%;height: 48px; background: #fff; 
+// }
 button { display: block; border: none; outline-style: none; }
 /* 不写下面可能会出现头部和底部被压缩，高度变小 */
 #header, #footer { flex-grow: 0; flex-shrink: 0; }
-#app-footer { height: 100%; }
-#app-footer nav { 
-    width: 100%; height: 100%; 
-    display: flex;
-}
-#app-footer nav a {
-    flex-grow: 1; display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 10px;
-    color: #696969;
-    justify-content: center;
-}
-#app-footer nav i { font-size: 25px; }
-#app-footer nav a.active {
-    color: #f03d37;
-}
+// #app-footer { height: 100%; }
+// #app-footer nav { 
+//     width: 100%; height: 100%; 
+//     display: flex;
+// }
+// #app-footer nav a {
+//     flex-grow: 1; display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     font-size: 10px;
+//     color: #696969;
+//     justify-content: center;
+// }
+// #app-footer nav i { font-size: 25px; }
+// #app-footer nav a.active {
+//     color: #f03d37;
+// }

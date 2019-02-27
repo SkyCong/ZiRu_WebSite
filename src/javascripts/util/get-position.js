@@ -1,4 +1,3 @@
-
 const getPosition = () => {
     return new Promise(function (resolve, injected) {
         var map = new AMap.Map('container', {

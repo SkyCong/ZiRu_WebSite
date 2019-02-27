@@ -1,12 +1,14 @@
 // views
 const appMainComingView = require('../views/app-main-coming.html')
 const ComingBannerView = require('../views/index/coming-banner.html')
+// const ComingDownloadView = require('../views/index/coming-download.html')//新增的download功能渲染
 const ComingRecommendView = require('../views/index/coming-recommend.html')
 const ComingListView = require('../views/index/coming-list.html')
 
 // models
 const {
     getComingBanner,
+    // getComingDownload, 无交互数据 故不用设置
     getComingRecommend,
     getComingList
 } = require('../models/app-index-model')
@@ -120,7 +122,7 @@ async function renderRecommend () {
     new Swiper('.coming-recommend__content', {
         slidesPerView: 'auto',
         spaceBetween: 14,
-        freeMode: true
+        freeMode: false
     });
 }
 
