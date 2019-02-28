@@ -1,16 +1,17 @@
 // views
 const appMainComingView = require('../views/app-main-coming.html')
 const ComingBannerView = require('../views/index/coming-banner.html')
-// const ComingDownloadView = require('../views/index/coming-download.html')//新增的download功能渲染
 const ComingRecommendView = require('../views/index/coming-recommend.html')
 const ComingListView = require('../views/index/coming-list.html')
+const CommendListView = require('../views/index/coming-recommend.html')//0228修订
 
 // models
 const {
     getComingBanner,
-    // getComingDownload, 无交互数据 故不用设置
     getComingRecommend,
-    getComingList
+    getComingList,
+    getCommend
+    //0228修订
 } = require('../models/app-index-model')
 
 // swiper and better-scroll
@@ -34,9 +35,12 @@ const render = async () => {
     // 渲染大架子
     $('.app-index-view').html(appMainComingView)
 
+    
     renderBanner() // 轮播图
-    renderRecommend() // 推荐 
-    renderComingList() // 电影列表
+    // renderRecommend() // 推荐 
+    // renderComingList() // 电影列表
+    CommendList()//0228修订 ps:注意顺序
+
     // 实例化better-scroll
     let better = new BScroll('.coming-content', {
         pullUpLoad: {
@@ -70,61 +74,79 @@ const render = async () => {
     })
 
 }
- // 渲染列表
-async function renderComingList (better) {
-    if ( !hasMore ) { // 如果没有了更多
-        console.log('没有更多了')
-        return false
-    }
-    if ( loading ) { // 如果正在加载
-        return false
-    }
-    // 开始加载
-    loading = true;
-    $('.loading').removeClass('hide') // 显示加载图标
-    
-    page ++ // 页数增加
-    // 请求数据的参数（对应的id）
-    let pageMovieIds = page ? movieIds.slice(page * pageSize, (page + 1) * pageSize).join(',') : undefined
-    
-    // 判断有无更多数据
-    if ( typeof pageMovieIds === 'string' && !pageMovieIds.length ) {
-        hasMore = false
-    }
 
-    
-
-    let data = await getComingList(pageMovieIds)
-    // 第一次获取到全部id时存储
-    if (data.movieIds) movieIds = data.movieIds 
-    // 将每次获取的数据都放入到整体的数据中
-    comingListSource = [ ...comingListSource, ...data.coming ] 
-    $('#coming-list').html(
-        Handlebars.compile( ComingListView)({
-            list: handleListFormat(comingListSource)
-        })
-    )
-    // 加载完成后
-    loading = false
-    // 通知better-scroll重新计算高度
-    if (better) better.refresh()
-    $('.loading').addClass('hide') // 隐藏加载图标
-}
-
-async function renderRecommend () {
-    // 推荐
-    let data = await getComingRecommend()
-    $('.app-index-view #coming-recommend').html(
-        Handlebars.compile(ComingRecommendView)({
-            list: replaceImageWH(data.coming, '170.230')
-        })
+ // 0228修订
+async function CommendList() {
+    let getCommendList = await getCommend() //mock index假数据
+    console.log(getCommendList)
+    let template = Handlebars.compile(CommendListView)
+    $('#coming-recommend').html(
+        template(getCommendList)
     )
     new Swiper('.coming-recommend__content', {
-        slidesPerView: 'auto',
-        spaceBetween: 14,
+        slidesPerView: 1.1,
+        spaceBetween: 8,
         freeMode: false
     });
 }
+
+//  // 渲染列表
+// async function renderComingList (better) {
+//     if ( !hasMore ) { // 如果没有了更多
+//         console.log('没有更多了')
+//         return false
+//     }
+//     if ( loading ) { // 如果正在加载
+//         return false
+//     }
+//     // 开始加载
+//     loading = true;
+//     $('.loading').removeClass('hide') // 显示加载图标
+    
+//     page ++ // 页数增加
+//     // 请求数据的参数（对应的id）
+//     let pageMovieIds = page ? movieIds.slice(page * pageSize, (page + 1) * pageSize).join(',') : undefined
+    
+//     // 判断有无更多数据
+//     if ( typeof pageMovieIds === 'string' && !pageMovieIds.length ) {
+//         hasMore = false
+//     }
+
+    
+
+//     let data = await getComingList(pageMovieIds)
+//     // 第一次获取到全部id时存储
+//     if (data.movieIds) movieIds = data.movieIds 
+//     // 将每次获取的数据都放入到整体的数据中
+//     comingListSource = [ ...comingListSource, ...data.coming ] 
+//     $('#coming-list').html(
+//         Handlebars.compile( ComingListView)({
+//             list: handleListFormat(comingListSource)
+//         })
+//     )
+//     // 加载完成后
+//     loading = false
+//     // 通知better-scroll重新计算高度
+//     if (better) better.refresh()
+//     $('.loading').addClass('hide') // 隐藏加载图标
+// }
+
+// async function renderRecommend () {
+//     // 推荐
+//     let data = await getComingRecommend()
+//     $('.app-index-view #coming-recommend').html(
+//         Handlebars.compile(ComingRecommendView)({
+//             list: replaceImageWH(data.coming, '170.230')
+//         })
+//     )
+//     //设置swiper的位置需要变化 上面
+//     // new Swiper('.coming-recommend__content', {
+//     //     slidesPerView: 1.1,
+//     //     spaceBetween: 0,
+//     //     slidesOffsetBefore : 18,
+//     //     freeMode: true
+//     // });
+// }
 
 
 async function renderBanner () {
@@ -136,7 +158,8 @@ async function renderBanner () {
         })
     )  
     // 实例化swiper
-    var mySwiper = new Swiper ('.coming-swiper', {
+    new Swiper ('.coming-swiper', {
+        autoplay:true,//jj自动切换
         loop: true, // 循环模式选项       
         // 如果需要分页器
         pagination: {
@@ -145,36 +168,36 @@ async function renderBanner () {
     })  
 }
 
-// 处理图片
-function replaceImageWH (data, size) {
-    data.forEach(item => {
-        item.img = item.img.replace(/w.h/g,size)
-    })
-    return data
-}
+// // 处理图片
+// function replaceImageWH (data, size) {
+//     data.forEach(item => {
+//         item.img = item.img.replace(/w.h/g,size)
+//     })
+//     return data
+// }
 
-// 处理数据格式
-function handleListFormat (items) {
-    items.forEach(item => {
-        if ( item.sc ) {
-            item.situation = `观众评 <span>${item.sc.toFixed(1)}</span>`
-        } else {
-            if ( item.preShow ) {
-                item.situation = `<span>${item.wish}</span>人想看`
-            } else {
-                item.situation = `暂无评分`
-            }
-        }
-        item.pre = item.showst === 4
-        if ( item.comingTitle !== targetDate ) {
-            item.showDate = true
-            targetDate = item.comingTitle
-        }
+// // 处理数据格式
+// function handleListFormat (items) {
+//     items.forEach(item => {
+//         if ( item.sc ) {
+//             item.situation = `观众评 <span>${item.sc.toFixed(1)}</span>`
+//         } else {
+//             if ( item.preShow ) {
+//                 item.situation = `<span>${item.wish}</span>人想看`
+//             } else {
+//                 item.situation = `暂无评分`
+//             }
+//         }
+//         item.pre = item.showst === 4
+//         if ( item.comingTitle !== targetDate ) {
+//             item.showDate = true
+//             targetDate = item.comingTitle
+//         }
         
-        item.img = item.img.replace(/\/w.h\//g, '/128.180/')  
-    })
-    return items
-}
+//         item.img = item.img.replace(/\/w.h\//g, '/128.180/')  
+//     })
+//     return items
+// }
 
 
 module.exports = {

@@ -263,13 +263,26 @@
 // 推荐
 .coming-recommend {
     border-top: 1px solid #EEE;
-    padding: .64rem 0 .64rem;
+    padding-top: .4rem;
     background: #fff;
 
-    .coming-recommend__title {
-        color: #333;
-        margin-bottom: .32rem;
-        font-size: 14px;
+    .coming__head {
+        .coming-recommend__title {
+            float: left;
+            color: #444;
+            margin-bottom: .32rem;
+            padding-left: .48rem;
+            font-size: .48rem;
+            font-weight: bold;
+        }
+
+        .coming-recommend__title-right {
+            float: right;
+            color: #999;
+            font-size: .373rem;
+            padding-right: .3rem;
+            font-weight: 100;
+        }
     }
 
     .coming-recommend__content {
@@ -279,6 +292,7 @@
     }
 
 }
+
 //_______________________________________________________________________
 .coming-recommend ul {
     list-style: none;
@@ -291,11 +305,11 @@
 .coming-recommend li {
     display: block;
     float: left;
-    width: 9.12rem;
+    // width: 8.9rem;
     /*height: 7rem;*/
     background-color: #FFF;
     font-size: 12px;
-    margin-right: .8rem;
+    // margin-right: .8rem;
 }
 
 .coming-recommend li .img {
@@ -326,66 +340,27 @@
     white-space: nowrap;
 }
 
-.ui-box .house .txt {
-    font-size: .226rem;
+.house .txt h2 {
+    margin-top: .15rem;
+    margin-bottom: .15rem;
 }
 
-.ui-box .house .txt h2 {
-    font-size: .226rem;
-    margin-top: .12rem;
+.house .txt h2 .price {
+    font-size: .45rem;
+    font-weight: bold
 }
 
-.ui-box .house .txt h2 span.name {
-    font-weight: 100
+.house .txt h2 .name {
+    font-size: .4rem;
+    color: #555454;
 }
 
-.ui-box .house .txt p.desc {
-    margin-top: .1rem;
-    font-size: .173rem;
-}
-
-
-
-
-.coming-recommend li .img a {
-    display: block;
-}
-
-.coming-recommend li .txt a {
-    display: block;
-}
-
-.coming-recommend li img {
-    width: 100%;
-}
-
-/*icoming-recommend*/
-
-.ellipsis {
-    display: block;
-    overflow: hidden;
-    width: 100%;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.ui-box .house .txt {
-    font-size: .426rem;
-}
-
-.ui-box .house .txt h2 {
-    font-size: .426rem;
-    margin-top: .32rem;
-}
-
-.ui-box .house .txt h2 span.name {
-    font-weight: 100
-}
-
-.ui-box .house .txt p.desc {
-    margin-top: .12rem;
+.house .txt .desc {
+    color: rgb(179, 171, 171);
     font-size: .373rem;
 }
+
+
 //_______________________________________________________________________
 
 

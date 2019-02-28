@@ -4,6 +4,7 @@ const serverConfig = {
     livereload: {
         enable: true
     },
+    host: '0.0.0.0',
     directoryListing: false,
     open: false,
     port: 3000,

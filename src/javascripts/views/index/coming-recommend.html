@@ -1,65 +1,157 @@
 <div class="coming-recommend">
-    <p class="coming-recommend__title">
-        近期最受期待
-    </p>
+    <h2 class="coming__head">
+        <span class="coming-recommend__title">自如友家</span>
+        <a href="http://m.ziroom.com/BJ/search?show=%E5%90%88%E7%A7%9F&list=1&type=1" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
     <div class="coming-recommend__content swiper-container">
         <ul id="list-yj" class="house swiper-wrapper">
+            {{#each a}}
             <li class="swiper-slide">
                 <div class="box">
-                    <div class="img"><a href="/BJ/room/61956828.html"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
-                                src="http://img.ziroom.com/house_images/g2m1/M00/EE/9D/ChAFBlwNK1yARH4GABASvKZJKFo241.JPG_C_600_400_Q80.jpg"
-                                alt=""></a></div>
-                    <div class="txt"><a href="/BJ/room/61956828.html">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
                             <h2 class="ellipsis ui-black">
-                                <!----> <span class="price">¥149/天 </span> <span class="name">望花路西里3居室-南卧</span>
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
                                 <!---->
                             </h2>
-                            <p class="ellipsis ui-gray desc">[朝阳区望京] 14号线 阜通</p>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
                         </a></div>
                 </div>
             </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div class="coming-recommend">
+    <h2 class="coming__head">
+        <p class="coming-recommend__title">自如整租</p>
+        <a href="http://m.ziroom.com/BJ/search?show=%E6%95%B4%E7%A7%9F&list=2&type=10" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
+    <div class="coming-recommend__content swiper-container">
+        <ul id="list-yj" class="house swiper-wrapper">
+            {{#each b}}
             <li class="swiper-slide">
                 <div class="box">
-                    <div class="img"><a href="/BJ/room/61451175.html"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
-                                src="http://img.ziroom.com/house_images/g2m1/M00/10/E8/ChAFB1wXTxGALlnsABQsmO2nDu0684.jpg_C_600_400_Q80.jpg"
-                                alt=""></a></div>
-                    <div class="txt"><a href="/BJ/room/61451175.html">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
                             <h2 class="ellipsis ui-black">
-                                <!----> <span class="price">¥199/天 </span> <span class="name">朝庭公寓3居室-东卧</span>
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
                                 <!---->
                             </h2>
-                            <p class="ellipsis ui-gray desc">[朝阳区望京] 14号线 望京南</p>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
                         </a></div>
                 </div>
             </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="coming-recommend">
+    <h2 class="coming__head">
+        <span class="coming-recommend__title">自如寓</span>
+        <a href="http://mstatic.ziroomapartment.com/" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
+    <div class="coming-recommend__content swiper-container">
+        <ul id="list-yj" class="house swiper-wrapper">
+            {{#each c}}
             <li class="swiper-slide">
                 <div class="box">
-                    <div class="img"><a href="/BJ/room/61375222.html"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
-                                src="http://img.ziroom.com/house_images/g2m1/M00/64/87/ChAFB1wyv1mATsP6AAEe-oGfpLg670.jpg_C_600_400_Q80.jpg"
-                                alt=""></a></div>
-                    <div class="txt"><a href="/BJ/room/61375222.html">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
                             <h2 class="ellipsis ui-black">
-                                <!----> <span class="price">¥129/天 </span> <span class="name">上东三角洲3居室-南卧</span>
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
                                 <!---->
                             </h2>
-                            <p class="ellipsis ui-gray desc">[朝阳区酒仙桥] 14号线 将台</p>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
                         </a></div>
                 </div>
             </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<div class="coming-recommend">
+    <h2 class="coming__head">
+        <span class="coming-recommend__title">自如民宿</span>
+        <a href="http://www.ziroomstay.com/" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
+    <div class="coming-recommend__content swiper-container">
+        <ul id="list-yj" class="house swiper-wrapper">
+            {{#each d}}
             <li class="swiper-slide">
                 <div class="box">
-                    <div class="img"><a href="/BJ/room/61955675.html"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
-                                src="http://img.ziroom.com/house_images/g2m1/M00/DD/CF/ChAFB1wJF-2AU7awAA36Vkslq0k929.JPG_C_600_400_Q80.jpg"
-                                alt=""></a></div>
-                    <div class="txt"><a href="/BJ/room/61955675.html">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
                             <h2 class="ellipsis ui-black">
-                                <!----> <span class="price">¥159/天 </span> <span class="name">利景名门4居室-南卧</span>
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
                                 <!---->
                             </h2>
-                            <p class="ellipsis ui-gray desc">[朝阳区望京] 14号线 望京南</p>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
                         </a></div>
                 </div>
             </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+<div class="coming-recommend">
+    <h2 class="coming__head">
+        <span class="coming-recommend__title">自如驿</span>
+        <a href="https://a.app.qq.com/o/simple.jsp?pkgname=com.ziroom.ziroomcustomer" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
+    <div class="coming-recommend__content swiper-container">
+        <ul id="list-yj" class="house swiper-wrapper">
+            {{#each e}}
+            <li class="swiper-slide">
+                <div class="box">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
+                            <h2 class="ellipsis ui-black">
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
+                                <!---->
+                            </h2>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
+                        </a></div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+
+
+<div class="coming-recommend">
+    <h2 class="coming__head">
+        <span class="coming-recommend__title">自如服务</span>
+        <a href="//s.m.ziroom.com" class="coming-recommend__title-right"><span>查看更多>></span></a>
+    </h2>
+
+    <div class="coming-recommend__content swiper-container">
+        <ul id="list-yj" class="house swiper-wrapper">
+            {{#each f}}
+            <li class="swiper-slide">
+                <div class="box">
+                    <div class="img"><a href="#"><img onerror="this.src='//static8.ziroom.com/phoenix/msite/2016/img/upload_big.jpg'"
+                                src="{{img}}" alt=""></a></div>
+                    <div class="txt"><a href="#">
+                            <h2 class="ellipsis ui-black">
+                                <!----> <span class="price">{{price}}</span> <span class="name">{{name}}</span>
+                                <!---->
+                            </h2>
+                            <p class="ellipsis ui-gray desc">{{desc}}</p>
+                        </a></div>
+                </div>
+            </li>
+            {{/each}}
         </ul>
     </div>
 </div>

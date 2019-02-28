@@ -1,7 +1,10 @@
 const appHeaderView = require('../views/app-header.html')
 const appIndexNowController = require('./app-index-now-controller')
 const appIndexComingController = require('./app-index-coming-controller')
+// const appIndexCommend = require('./app-index-coming-commend') 
+
 const appMainView = require('../views/app-main.html') 
+
 
 const Store = require('../store')
 
@@ -37,6 +40,7 @@ const render = async () => {
     })
 
     
+    // appIndexCommend.render()
 
     // 定位城市
     let positionInfo = await getPositionModel()

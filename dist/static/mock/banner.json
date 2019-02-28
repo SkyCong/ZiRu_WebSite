@@ -2,24 +2,24 @@
 	"status": 0,
 	"data": [{
         "actionType": 1,
-        "actionData": "{\"url\":\"http://mp.weixin.qq.com/s?__biz=MjM5NzE7497a#rd\"}",
+        "actionData": "https://hd.ziroom.com/2019/zsdj/index.html",
 		"imgUrl": "http://image.ziroom.com/g2m1/M00/D5/A5/ChAFB1xg1pmAHHbkAAMXI-u8VZg305.jpg"
 	}, {
         "actionType": 2,
-        "actionData": "{\"url\":\"http://mp.weixin.qq.com/s?__biz=MjM5NzE7497a#rd\"}",
+        "actionData": "https://special.ziroom.com/2018/zrk_shx_m/index.html?v=1001",
 		"imgUrl": "http://image.ziroom.com/g2m1/M00/CC/BD/ChAFB1xRKxOAd3F0AAIP5WkFpoU783.jpg"
 	}, {
         "actionType": 3,
-        "actionData": "{\"url\":\"http://mp.weixin.qq.com/s?__biz=MjM5NzE7497a#rd\"}",
+        "actionData": "https://special.ziroom.com/2018/tpl201810/index.html?id=2232",
 		"imgUrl": "http://image.ziroom.com/g2m1/M00/3C/F5/ChAFBlwktxyAZ02ZAAIWPB3AMhU299.jpg"
 	}, {
 		"actionType": 4,
-        "actionData": "{\"url\":\"http://mp.weixin.qq.com/s?__biz=MjM5NzE7497a#rd\"}",
+        "actionData": "https://hd.ziroom.com/2018new/dist/huilei/index.html?cityCode=110000&amp;plat=web",
         "imgUrl": "http://image.ziroom.com/g2/M00/CE/6C/ChAFfVr-NR2AIOxDAAHEGRYkrh4848.jpg"
 
 	},{
 		"actionType": 5,
-        "actionData": "{\"url\":\"http://mp.weixin.qq.com/s?__biz=MjM5NzE7497a#rd\"}",
+        "actionData": "https://hd.ziroom.com/2019/zsdj/index.html",
         "imgUrl": "http://image.ziroom.com/g2m1/M00/D6/12/ChAFB1xg9OeASjbUAAEaE0yjUbA405.jpg"
 	}],
 	"msg": "success"
